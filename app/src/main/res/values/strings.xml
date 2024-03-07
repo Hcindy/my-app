@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My App</string>
+    <string name="color_counter">记色器</string>
+    <string name="text_search">文本搜索</string>
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#00FFFFFF">
+
+    <EditText
+        android:id="@+id/search_input"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textColor="#CCC"
+        android:textSize="12sp"
+        tools:ignore="Autofill,LabelFor" />
+
+    <Button
+        android:id="@+id/search_input_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/search_input"
+        android:layout_toRightOf="@id/search_input"
+        android:background="#00FFFFFF"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="x"
+        android:textColor="#CCC"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/back_to_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_input"
+        android:layout_centerHorizontal="true"
+        android:background="#00FFFFFF"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="全屏"
+        android:textColor="#CCC"
+        android:textSize="12sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_result"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/search_input"
+        android:layout_alignStart="@id/search_input"
+        android:layout_alignLeft="@id/search_input"
+        android:layout_alignEnd="@+id/search_input_clear"
+        android:layout_alignRight="@+id/search_input_clear"
+        android:scrollbars="vertical"
+        android:visibility="invisible"
+        app:layoutManager="LinearLayoutManager" />
+</RelativeLayout>

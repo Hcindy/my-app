@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TextSearchActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="@string/text_search"
+        app:titleTextColor="@color/white">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/select_text_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择文本文件"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/search_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="search_content_input, select_text_input_clear, select_text_file_reset, search_result" />
+
+    <EditText
+        android:id="@+id/search_content_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@id/select_text_input_clear"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:ignore="Autofill,LabelFor" />
+
+    <Button
+        android:id="@+id/select_text_input_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="清空"
+        app:layout_constraintBaseline_toBaselineOf="@id/search_content_input"
+        app:layout_constraintBottom_toBottomOf="@id/search_content_input"
+        app:layout_constraintEnd_toStartOf="@id/select_text_file_reset"
+        app:layout_constraintStart_toEndOf="@id/search_content_input"
+        app:layout_constraintTop_toTopOf="@id/search_content_input" />
+
+    <Button
+        android:id="@+id/select_text_file_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="重选"
+        app:layout_constraintBaseline_toBaselineOf="@id/search_content_input"
+        app:layout_constraintBottom_toBottomOf="@id/search_content_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/select_text_input_clear"
+        app:layout_constraintTop_toTopOf="@id/search_content_input" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_content_input" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

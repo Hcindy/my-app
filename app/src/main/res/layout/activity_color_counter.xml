@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ColorCounterActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="@string/color_counter"
+        app:titleTextColor="@color/white" />
+
+    <Button
+        android:id="@+id/red"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="0"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:backgroundTint="#FF1100"
+        app:layout_constraintBottom_toTopOf="@id/white"
+        app:layout_constraintEnd_toStartOf="@id/yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <Button
+        android:id="@+id/yellow"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="0"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:backgroundTint="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="@id/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/red"
+        app:layout_constraintTop_toTopOf="@id/red" />
+
+    <Button
+        android:id="@+id/white"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="0"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:backgroundTint="#CFCFCF"
+        app:layout_constraintBottom_toTopOf="@id/max"
+        app:layout_constraintEnd_toStartOf="@id/blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/red" />
+
+    <Button
+        android:id="@+id/blue"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="0"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:backgroundTint="#0027FF"
+        app:layout_constraintBottom_toBottomOf="@id/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/white"
+        app:layout_constraintTop_toTopOf="@id/white" />
+
+    <Button
+        android:id="@+id/max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="最多"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/reset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/white" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重置"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/max"
+        app:layout_constraintTop_toBottomOf="@id/blue" />
+</androidx.constraintlayout.widget.ConstraintLayout>
